@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="LINKEDLIST" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/LINKEDLIST" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/LINKEDLIST" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="linkedlist_LAB01.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linkedlist_LAB02.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linkedlist_LAB03.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linkedlist_LAB04.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linkedlist_TUTORIAL01.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linkedlist_TUTORIAL02.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linkedlist_TUTORIAL03.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linkedlist_TUTORIAL04.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linkedlist_lecture.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linkedlist_lecture_insertNode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1629624395 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_lecture.c
+	<stdlib.h>
+	<stdio.h>
+
+1629624455 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_lecture_insertnode.c
+	<stdlib.h>
+	<stdio.h>
+
+1629629546 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_tutorial01.c
+	<stdio.h>
+	<stdlib.h>
+
+1629713273 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_tutorial02.c
+	<stdio.h>
+	<stdlib.h>
+
+1629742737 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_tutorial03.c
+	<stdio.h>
+	<stdlib.h>
+
+1629743368 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_tutorial04.c
+	<stdio.h>
+	<stdlib.h>
+
+1629745092 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_lab01.c
+	<stdio.h>
+	<stdlib.h>
+
+1629745271 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_lab02.c
+	<stdio.h>
+	<stdlib.h>
+
+1629746268 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_lab03.c
+	<stdio.h>
+	<stdlib.h>
+
+1629747621 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_lab04.c
+	<stdio.h>
+	<stdlib.h>
+
