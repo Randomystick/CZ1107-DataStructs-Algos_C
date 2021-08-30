@@ -35,7 +35,27 @@
 	<stdio.h>
 	<stdlib.h>
 
-1629747621 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_lab04.c
+1629747649 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_lab04.c
+	<stdio.h>
+	<stdlib.h>
+
+1630133885 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_assn01.c
+	<stdio.h>
+	<stdlib.h>
+
+1630133955 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_assn02.c
+	<stdio.h>
+	<stdlib.h>
+
+1630135352 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_assn03.c
+	<stdio.h>
+	<stdlib.h>
+
+1630136024 source:c:\.programming\c\cz1107-c\linkedlist\linkedlist_assn04.c
+	<stdio.h>
+	<stdlib.h>
+
+1630135845 source:c:\.programming\c\cz1107-c\linkedlist\test.c
 	<stdio.h>
 	<stdlib.h>
 
