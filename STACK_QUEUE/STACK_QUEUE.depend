@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1630326421 source:c:\.programming\c\cz1107-c\stack_queue\stack_queue\stackqueue_lab01.c
+	"stdio.h"
+	<stdlib.h>
+
+1630397114 source:c:\.programming\c\cz1107-c\stack_queue\stackqueue_lab01.c
+	"stdio.h"
+	<stdlib.h>
+
+1630389482 source:c:\.programming\c\cz1107-c\stack_queue\stackqueue_tut01.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
+1630390289 source:c:\.programming\c\cz1107-c\stack_queue\stackqueue_tut02.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
+1630392389 source:c:\.programming\c\cz1107-c\stack_queue\stackqueue_tut03.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
