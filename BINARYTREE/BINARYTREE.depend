@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1631608087 source:c:\.programming\c\cz1107-c\binarytree\lab1.c
+	<stdio.h>
+	<stdlib.h>
+
+1631599076 source:c:\.programming\c\cz1107-c\binarytree\tut01.c
+	<stdio.h>
+	<stdlib.h>
+
+1631599396 source:c:\.programming\c\cz1107-c\binarytree\tut02.c
+	<stdio.h>
+	<stdlib.h>
+
+1631599576 source:c:\.programming\c\cz1107-c\binarytree\tut03.c
+	<stdio.h>
+	<stdlib.h>
+
+1631602733 source:c:\.programming\c\cz1107-c\binarytree\tut04.c
+	<stdio.h>
+	<stdlib.h>
+
+1631607949 source:c:\.programming\c\cz1107-c\binarytree\lab2.c
+	<stdio.h>
+	<stdlib.h>
+

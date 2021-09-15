@@ -3,7 +3,7 @@
 	"stdio.h"
 	<stdlib.h>
 
-1630397114 source:c:\.programming\c\cz1107-c\stack_queue\stackqueue_lab01.c
+1630927703 source:c:\.programming\c\cz1107-c\stack_queue\stackqueue_lab01.c
 	"stdio.h"
 	<stdlib.h>
 
@@ -18,6 +18,20 @@
 	<limits.h>
 
 1630392389 source:c:\.programming\c\cz1107-c\stack_queue\stackqueue_tut03.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
+1630928885 source:c:\.programming\c\cz1107-c\stack_queue\stackqueue_assn01.c
+	<stdio.h>
+	<stdlib.h>
+
+1630929247 source:c:\.programming\c\cz1107-c\stack_queue\stackqueue_assn02.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
+1630929736 source:c:\.programming\c\cz1107-c\stack_queue\stackqueue_assn03.c
 	<stdio.h>
 	<stdlib.h>
 	<limits.h>

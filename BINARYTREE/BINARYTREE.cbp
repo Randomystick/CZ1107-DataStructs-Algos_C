@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="STACK_QUEUE" />
+		<Option title="BINARYTREE" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/STACK_QUEUE" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/BINARYTREE" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/STACK_QUEUE" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/BINARYTREE" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,28 +31,22 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="stackqueue_ASSN01.c">
+		<Unit filename="LAB1.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="stackqueue_ASSN02.c">
+		<Unit filename="LAB2.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="stackqueue_ASSN03.c">
+		<Unit filename="TUT01.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="stackqueue_ASSN04.c">
+		<Unit filename="TUT02.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="stackqueue_LAB01.c">
+		<Unit filename="TUT03.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="stackqueue_TUT01.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="stackqueue_TUT02.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="stackqueue_TUT03.c">
+		<Unit filename="TUT04.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
