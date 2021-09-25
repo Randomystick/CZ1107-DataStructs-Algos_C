@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-/*
+///*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -18,6 +18,7 @@ void printBSTInOrder(BTNode *node);
 int isBST(BTNode *node, int min, int max);
 BTNode *removeBSTNode(BTNode *node, int value);
 BTNode *findMin(BTNode *p);
+BTNode *findVal(BTNode *p, int value);
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -67,11 +68,13 @@ void insertBSTNode(BTNode **node, int value)
 //////////////////////////////
 //////////// TODO ////////////
 //////////////////////////////
-    //BASE CASE: INSERT A NEW NODE USING MALLOC
+    //BASE CASE: INSERT A NEW NODE USING MALLOC AT THE EMPTY SLOT
+        // either the tree is empty, or
+        // you reached the correct place to insert the node after going through the recursion
     if (*node == NULL)
     {
         *node = malloc(sizeof(BTNode));
-        (*node)->item = value;
+        (*node)->item  = value;
         (*node)->left  = NULL;
         (*node)->right = NULL;
         return;
@@ -136,77 +139,79 @@ BTNode *removeBSTNode(BTNode *node, int value)
 //////////////////////////////
 //////////// TODO ////////////
 //////////////////////////////
-    // CASE 1: X HAS NO CHILDREN (REMOVE X)
-    if (node->left == NULL && node->right == NULL)
+    if (node == NULL)
     {
-        node->item == NULL;
+        printf("cant find");
+        return;
     }
 
-    // CASE 2: X HAS ONE CHILD (SWAP X WITH ITS CHILD)
-    if (node->left == NULL || node->right == NULL)
+    // LOCATE THE NODE
+    // value is smaller than root. move into left subtree
+    if (value < node->item)
     {
-        if (node->left != NULL)
+        node->left = removeBSTNode(node->left, value);
+    }
+
+    // value is bigger than root. move into right subtree
+    else if (node->item < value)
+    {
+        node->right = removeBSTNode(node->right, value);
+    }
+
+    // we found the node, time to remove
+    else
+    {
+        // CASE 1: X HAS NO CHILDREN (REMOVE X)
+        if (node->left == NULL && node->right == NULL)
         {
-            BTNode* temp = node->left;
-            node->item = temp->item;
-            node->left = NULL;
+            node == NULL;
+            return node;
         }
-        else if (node->right != NULL)
+
+        // CASE 2: X HAS ONE CHILD (SWAP X WITH ITS CHILD)
+        if (node->left == NULL || node->right == NULL)
         {
-            BTNode* temp = node->right;
-            node->item = temp->item;
-            node->right = NULL;
+            if (node->left != NULL)
+            {
+                BTNode* temp = node->left;
+                //free(node);
+                return temp;
+            }
+            else if (node->right != NULL)
+            {
+                BTNode* temp = node->right;
+                //free(node);
+                return temp;
+            }
         }
+
+        // CASE 3: X HAS TWO CHILDREN
+        // SWAP X WITH SUCCESSOR
+
+        //find the successor - smallest in the right subtree
+        BTNode* succ = findMin(node->right);
+        node->item = succ->item;
+        // PERFORM CASE 1 OR 2
+        node->right = removeBSTNode(node->right, succ->item);
     }
-
-    // CASE 3: X HAS TWO CHILDREN
-    // SWAP X WITH SUCCESSOR
-    typedef struct _listnode
-    {
-        BTNode* BTNodee;
-        struct _listnode* next;
-    } ListNode;
-
-    ListNode* ln = (ListNode*) malloc(sizeof(ListNode));
-    ln->BTNodee  = NULL;
-    ln->next     = NULL;
-
-    ListNode* cur = ln;
-    void traverseBST(BTNode *node, ListNode* ln)
-    {
-        if (node==NULL) return;
-        traverseBST(node->left, ln);
-        cur->BTNodee = node;
-        cur->next = malloc(sizeof(ListNode));
-        cur = cur->next;
-        traverseBST(node->right, ln);
-    }
-
-    traverseBST(node, ln);
-
-
-    cur = ln;
-    while (cur != NULL)
-    {
-        if (value == cur->BTNodee->item)
-        {
-            BTNode* tempp = cur->BTNodee;
-            cur->BTNodee = cur->next->BTNodee;
-            cur->BTNodee->next = tempp;
-            break;
-        }
-        cur = cur->next;
-    }
-
-    // PERFORM CASE 1 OR 2
-
-}
+    return node; // when no change is required - just go back up the tree without editing any node
+} //end fn
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 BTNode *findMin(BTNode *p)
 {
-	// write your code here
+//////////////////////////////
+//////////// TODO ////////////
+//////////////////////////////
+    BTNode* cur = p;
+    while (cur != NULL && cur->left != NULL)
+    {
+        cur = cur->left;
+    }
+    return cur;
 }
+
 //*/
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

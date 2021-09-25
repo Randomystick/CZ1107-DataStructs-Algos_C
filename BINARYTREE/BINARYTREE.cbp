@@ -31,6 +31,15 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="ASSN01_BST.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ASSN02_BST.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ASSN03_BST.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="LAB1.c">
 			<Option compilerVar="CC" />
 		</Unit>
