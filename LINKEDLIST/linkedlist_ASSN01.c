@@ -5,7 +5,7 @@ Assignment 1 - Linked List Questions
 Purpose: Implementing the required functions for Question 1 */
 
 //////////////////////////////////////////////////////////////////////////////////
-///*
+/*
 #include <stdio.h>
 #include <stdlib.h>
 

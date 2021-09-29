@@ -55,6 +55,18 @@
 		<Unit filename="linkedlist_LAB04.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="linkedlist_PRAC01.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linkedlist_PRAC02-ans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linkedlist_PRAC02.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="linkedlist_PRAC2-01.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="linkedlist_TUTORIAL01.c">
 			<Option compilerVar="CC" />
 		</Unit>

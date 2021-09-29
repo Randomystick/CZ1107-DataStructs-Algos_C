@@ -123,6 +123,36 @@ void appendLL(LinkedList *ll_a , LinkedList *ll_b)
     }
 
     ll_b->head = NULL;
+
+
+                                void appendLL(LinkedList *ll_a , LinkedList *ll_b)
+                                {
+                                    if (ll_a->head == NULL || ll_b->head == NULL) return;
+
+                                    while (ll_b->head != NULL)
+                                    {
+                                        insertNode(ll_a, ll_a->size, ll_b->head->item);
+                                        removeNode(ll_b, 0);
+                                    }
+                                }
+
+
+                                void appendLL(LinkedList *ll_a , LinkedList *ll_b){
+                                    ListNode *cur;
+                                    if(ll_a->head == NULL){
+                                        ll_a->head = ll_b->head;
+                                    }else{
+                                        cur = ll_a->head;
+                                        while(cur->next != NULL){
+                                            cur = cur->next;
+                                        }
+                                        cur->next = ll_b->head;
+                                        ll_a->size += ll_b->size;
+                                    }
+                                    ll_b->head = NULL;
+                                    ll_b->size = 0;
+                                }
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////

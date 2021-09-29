@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -294,4 +294,4 @@ void removeAllItems(LinkedList *ll)
 	ll->head = NULL;
 	ll->size = 0;
 }
-
+//*/

@@ -138,6 +138,50 @@ int moveMaxToFront(ListNode **ptrHead)
         pre = pre->next;
     }
     pre->next = pre->next->next;
+
+                                    int moveMaxToFront(ListNode **ptrHead)
+                                    {
+                                        ListNode* cur = *ptrHead;
+                                        if (cur == NULL || cur->next == NULL) return;
+
+                                        int maxValue = cur->item;
+                                        int maxIndex = 0;
+                                        int curIndex = 0;
+                                        while (cur != NULL)
+                                        {
+                                            if (cur->item > maxValue)
+                                            {
+                                                maxValue = cur->item;
+                                                maxIndex = curIndex;
+                                            }
+                                            curIndex++;
+                                            cur = cur->next;
+                                        }
+                                        //printf("maxValue %i maxIndex %i", maxValue, maxIndex);
+                                        if (maxIndex == 0) return;
+
+
+                                        //removeNode
+                                        // Find the nodes before and after the target position
+                                        // Free the target node and reconnect the links
+                                        ListNode* pre = *ptrHead;
+                                        for (int i=0; i<maxIndex-1; i++)
+                                        {
+                                            pre = pre->next;
+                                        }
+                                        cur = pre->next;
+                                        pre->next = cur->next;
+                                        free(cur);
+
+
+                                        //insertNode
+                                        cur = *ptrHead;
+                                        ListNode* newNode = malloc(sizeof(ListNode));
+                                        newNode->item = maxValue;
+                                        newNode->next = cur;
+                                        *ptrHead = newNode;
+                                    }
+
 }
 
 //////////////////////////////////////////////////////////////////////////////////
