@@ -169,6 +169,21 @@ void removeOddValues(Queue *q)
     {
         enqueue(q, dequeue(&tempQueue));
     }
+
+
+                                                    void removeOddValues(Queue *q)
+                                                    {
+                                                        int size = q->ll.size;
+
+                                                        for (int i=0; i<size; i++)
+                                                        {
+                                                            int curItem = dequeue(q);
+                                                            if (curItem % 2 == 0)
+                                                            {
+                                                                enqueue(q, curItem);
+                                                            }
+                                                        }
+                                                    }
 }
 
 //////////////////////////////////////////////////////////////////////////////////

@@ -133,6 +133,32 @@ void moveOddItemsToBack(LinkedList *ll)
         insertNode(ll, ll->size, oddNodes.head->item); //however, the oddNodes.head is a pointer to a listnode, so oddNodes.head still needs -> to reference item
         removeNode(&oddNodes, 0);
     }
+
+                                                                    void moveOddItemsToBack(LinkedList *ll)
+                                                                    {
+                                                                        int loop = ll->size;
+                                                                        if (loop < 2) return;
+
+                                                                        ListNode* cur = ll->head;
+                                                                        int index = 0;
+                                                                        while (loop--)
+                                                                        {
+                                                                            if (cur->item % 2 != 0)
+                                                                            {
+                                                                                insertNode(ll, ll->size, cur->item);
+                                                                                cur = cur->next;
+                                                                                removeNode(ll, index);
+
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                index++;
+                                                                                cur = cur->next;
+                                                                            }
+
+                                                                        }
+                                                                    }
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////

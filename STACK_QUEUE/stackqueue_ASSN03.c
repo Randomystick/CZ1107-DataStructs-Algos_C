@@ -139,6 +139,28 @@ int isStackPairwiseConsecutive(Stack *s)
     }
 
     return isPairwise;
+
+
+
+                                                            int isStackPairwiseConsecutive(Stack *s)
+                                                            {
+                                                                if (s->ll.size < 1) return 0;
+
+                                                                int curValue = 0;
+
+                                                                while (!isEmptyStack(s))
+                                                                {
+                                                                    curValue = pop(s);
+                                                                    if (curValue != peek(s)+1 && curValue != peek(s)-1)
+                                                                    {
+                                                                        return 0;
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        pop(s);
+                                                                    }
+                                                                }
+                                                            }
 }
 
 //////////////////////////////////////////////////////////////////////////////////

@@ -165,6 +165,19 @@ void removeEvenValues(Stack *s)
     {
         push(s, pop(&tempStack));
     }
+
+
+                                                                        void removeEvenValues(Stack *s)
+                                                                        {
+                                                                            if (isEmptyStack(s)) return;
+
+                                                                            int i = pop(s);
+                                                                            removeEvenValues(s);
+                                                                            if (i % 2 != 0)
+                                                                            {
+                                                                                push(s, i);
+                                                                            }
+                                                                        }
 }
 
 //////////////////////////////////////////////////////////////////////////////////

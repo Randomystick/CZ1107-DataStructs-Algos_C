@@ -1,185 +1,161 @@
-////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 
 #include <stdio.h>
 #include <stdlib.h>
 
-////////////////////////////////////////////////////////////////////
-
+///////////////////////////////////////////////////////////////////////
 
 typedef struct _btnode{
-	int item;
-	struct _btnode *left;
-	struct _btnode *right;
-
+int item;
+struct _btnode *left;
+struct _btnode *right;
 } BTNode;
 
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
 
+void insertBSTNode(BTNode **node, int value);
+void printBSTInOrder(BTNode *node);
+int isBST(BTNode *node, int min, int max);
+BTNode *removeBSTNode(BTNode *node, int value);
+BTNode *findMin(BTNode *p);
 
-void mirrorTree(BTNode *node);
+///////////////////////////////////////////////////////////////////////
 
-void printSmallerValues(BTNode *node, int m);
-int smallestValue(BTNode *node);
-int hasGreatGrandchild(BTNode *node);
+int main(){
+	int i=0;
 
-void printTree_InOrder(BTNode *node);
+	BTNode *root=NULL;
 
-////////////////////////////////////////////////////////////////////
+	//question 1
+	do{
+		printf("input a value you want to insert(-1 to quit):");
 
-int main(int argc, const char * argv[]){
-
-	int i;
-	BTNode *root, *root2;
-	BTNode btn[15];
-
-	// Create the tree in Q1
-	// Using manual dynamic allocation of memory for BTNodes
-
-	root = malloc(sizeof(BTNode));
-	root->item = 4;
-
-	root->left = malloc(sizeof(BTNode));
-	root->left->item = 5;
-
-	root->right = malloc(sizeof(BTNode));
-	root->right->item = 2;
-
-	root->left->left = NULL;
-
-	root->left->right = malloc(sizeof(BTNode));
-	root->left->right->item = 6;
-
-	root->left->right->left = NULL;
-	root->left->right->right = NULL;
-
-	root->right->left = malloc(sizeof(BTNode));
-	root->right->left->item = 3;
-
-	root->right->right = malloc(sizeof(BTNode));
-	root->right->right->item = 1;
-
-	root->right->left->left = NULL;
-
-	root->right->left->right = NULL;
-
-	root->right->right->left = NULL;
-
-	root->right->right->right = NULL;
-
-	printTree_InOrder(root);
-	printf("\n");
-	mirrorTree(root);
-	printTree_InOrder(root);
-	printf("\n\n");
+		scanf("%d",&i);
+		if (i!=-1)
+			insertBSTNode(&root,i);
+	}while(i!=-1);
 
 	//question 2
-	printf("\n input m for question 2:");
-	scanf("%d", &i);
-	printf("the values smaller than %d are:", i);
-	printSmallerValues(root, i);
-	printf("\n\n");
+	printf("\n");
+	printBSTInOrder(root);
 
 	//question 3
-	printf("The smallest value in the tree is: %d\n", smallestValue(root));
+	if ( isBST(root,-1000000, 1000000)==1)
+		printf("It is a BST!\n");
+	else
+		printf("It is not a BST!\n");
 
 	//question 4
-	// Create a tree for Q4: Tall enough so some nodes have great-grandchildren
-	// Use array of BTNodes, create tree by linking nodes together
-	for (i = 0; i <= 6; i++){
-		btn[i].item = i;
-		btn[i].left = &(btn[i * 2 + 1]);
-		btn[i].right = &(btn[i * 2 + 2]);
-	}
+	do{
+		printf("\ninput a value you want to remove(-1 to quit):");
+		scanf("%d",&i);
+		if (i!=-1)
+		{
+			root=removeBSTNode(root,i);
+			printBSTInOrder(root);
+		}
+	}while(i!=-1);
 
-	for (i = 7; i <= 14; i++){
-		btn[i].item = i;
-		btn[i].left = NULL;
-		btn[i].right = NULL;
-	}
-	root2 = &btn[0];
-
-	printf("The tree for question 4 visited by in-order is \n");
-	printTree_InOrder(root2);
-	printf("\nthe values stored in all nodes of the tree that have at least one great-grandchild are: ");
-
-	hasGreatGrandchild(root2);
 
 	return 0;
 }
 
-void mirrorTree(BTNode *node)
+//////////////////////////////////////////////////////////////////////
+
+void insertBSTNode(BTNode **node, int value)
+{
+    if (*node==NULL)
+	{
+		*node=malloc(sizeof(BTNode));
+		(*node)->item =value;
+		(*node)->left =NULL;
+		(*node)->right=NULL;
+		return;
+	}
+
+	if (value < (*node)->item)
+    {
+        insertBSTNode(&((*node)->left),value);
+    }
+    else if ((*node)->item < value)
+    {
+        insertBSTNode(&((*node)->right),value);
+    }
+    else
+    {
+        printf("Already exists in the BST\n");
+		return;
+    }
+}
+
+//////////////////////////////////////////////////////////////////////
+
+void printBSTInOrder(BTNode *node)
 {
     if (node == NULL) return;
 
-    // VISIT LEFT SUBTREE
-    mirrorTree(node->left);
-
-    // VISIT RIGHT SUBTREE
-    mirrorTree(node->right);
-
-    // DO THE SWAP - YOU ARE NOW AT THE DEEPEST NODE
-    BTNode* tempNode    = node->left;
-    node->left          = node->right;
-    node->right         = tempNode;
+    printBSTInOrder(node->left);
+    printf("%d ", node->item);
+    printBSTInOrder(node->right);
 }
 
-int hasGreatGrandchild(BTNode *node)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int isBST(BTNode *node, int min, int max) // the item stored in node has to be smaller than max and larger than min
 {
-    if (node == NULL) return -1;
-    int l = hasGreatGrandchild(node->left);
-    int r = hasGreatGrandchild(node->right);
+    if (node == NULL) return 1;
 
-    if (l<r)
-    {
-        l=r;
-    }
+    int left = isBST(node->left, min, node->item);
+    int right= isBST(node->right,node->item, max);
 
-    if (l>=2)
-    {
-        printf("%d ", node->item);
-    }
+    if (min < node->item < max) return 1; else return 0;
 
-    return l+1;
+    return (left && right);
 }
 
-void printSmallerValues(BTNode *node, int m)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+BTNode *removeBSTNode(BTNode *node, int value)
 {
-    if (node == NULL) return;
+	if (node==NULL)
+	{
+		printf("can't find the value!\n");
+		return NULL;
+	}
 
-    if (node->item < m)
-    {
-        printf("%d ", node->item);
-    }
-    printSmallerValues(node->left, m);
-    printSmallerValues(node->right, m);
+    BTNode *p;
+	if (node->item > value) //go left tree
+		 removeBSTNode(node->left, value);
+
+	else if (node->item < value) //go right tree
+		 removeBSTNode(node->right, value);
+
+	else// if ((*node)->item == value) found the node!
+		if (node->left!=NULL && node->right !=NULL ) //*node has two children
+		{
+			p=findMin(node->right);
+			node->item  = p->item;
+			node->right = removeBSTNode(node->right,p->item );
+		}
+		else //x has no children or one child
+		{
+			p=node;
+
+			if (node->left != NULL) node=node->left;
+			else node=node->right;
+
+			free(p);
+		}
+	return node;
 }
 
-int smallestValue(BTNode *node)
+BTNode *findMin(BTNode *p)
 {
-    if (node == NULL) return 6969;
-
-    int l = smallestValue(node->left);
-    int r = smallestValue(node->right);
-
-    if (l > r)
-    {
-        l = r;
-    }
-    if (l > node->item)
-    {
-        l = node->item;
-    }
-    return l;
+//                  6
+//              4       8
+//             3 5     7 9
+    if (p->left == NULL) return p;
+    return findMin(p->left);
 }
 
-
-//////////////////////////////////////////////////////////////////
-
-void printTree_InOrder(BTNode *node){
-
-	if (node == NULL) return;
-	printTree_InOrder(node->left);
-	printf("%d, ", node->item);
-	printTree_InOrder(node->right);
-	return;
-}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

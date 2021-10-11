@@ -124,24 +124,30 @@ int split(ListNode *cur, ListNode **ptrEvenList,ListNode **ptrOddList)
 ////////////////////////////////////////////
 /////////////////// TODO ///////////////////
 ////////////////////////////////////////////
-    ListNode* curFULL = cur;
-    int indexEven = 0;
-    int indexOdd = 0;
 
-    while (curFULL != NULL)
+    ListNode* curRestore = cur;
+
+    int indice = 0;
+    int evenIndex = 0;
+    int odddIndex = 0;
+
+    if (cur == NULL) return -1;
+
+    while (cur != NULL)
     {
-        if (curFULL->item % 2 == 0)
+        if (indice % 2 == 0)
         {
-            insertNode(ptrEvenList, indexEven, curFULL->item);
-            indexEven++;
+            insertNode(ptrEvenList, evenIndex++, cur->item);
         }
         else
         {
-            insertNode(ptrOddList, indexOdd, curFULL->item);
-            indexOdd++;
+            insertNode(ptrOddList, odddIndex++, cur->item);
         }
-
-        curFULL = curFULL->next;
+        indice++;
+        cur = cur->next;
     }
+
+    cur = curRestore;
+    return 0;
 }
 //*/

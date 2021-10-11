@@ -123,6 +123,7 @@ void frontBackSplitLinkedList(LinkedList *ll, LinkedList *resultFrontList, Linke
     while (sizeeFront--) // move all the nodes to the front linked list (till the required size)
     {
         insertNode(resultFrontList, indexxFront++, ll->head->item);
+        //hindsight note: just use resultFrontList->size instead of indexxFront++
         removeNode(ll, 0);
     }
 

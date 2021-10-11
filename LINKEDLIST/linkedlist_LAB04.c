@@ -134,5 +134,43 @@ int duplicateReverse(ListNode *cur,ListNode **ptrNewHead)
        insertNode(ptrNewHead, index, findNode(cur, i)->item);
        index += 1;
     }
+
+                                            int duplicateReverse(ListNode *cur,ListNode **ptrNewHead)
+                                            {
+                                                if (cur == NULL) return -1;
+                                                ListNode* curr = cur;
+
+                                                //get size of cur
+                                                int size = 0;
+                                                while (curr != NULL)
+                                                {
+                                                    size++;
+                                                    curr = curr->next;
+                                                }
+                                                curr = cur;
+
+                                                //get nodes from the back
+                                                for (int i=0; i<size; i++)
+                                                {
+                                                    ListNode* node = findNode(cur, size-i-1);
+                                                    insertNode(ptrNewHead, i, node->item);
+                                                }
+                                                return 0;
+                                            }
+
+                                            int duplicateReverse(ListNode *head, ListNode **ptrNewHead){
+                                                ListNode *cur=head;
+
+                                                if (cur == NULL) return -1;
+                                                // Simply traverse the list and insert each visited node into the new list at index 0 each time
+                                                while (cur != NULL){
+
+                                                    if (insertNode(ptrNewHead, 0, cur->num) == -1)
+                                                        return -1;
+                                                    cur = cur ->next;
+                                                }
+                                                return 0;
+                                            }
+
 }
 //*/
