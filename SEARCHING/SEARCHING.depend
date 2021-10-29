@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1635210451 source:c:\.programming\c\cz1107-c\searching\search_assn01.c
+	<stdio.h>
+	<stdlib.h>
+
+1635148985 source:c:\.programming\c\cz1107-c\searching\search_lab03.c
+
+1635202085 source:c:\.programming\c\cz1107-c\searching\search_assn_mcq01.c
+	<stdio.h>
+	<stdlib.h>
+
+1635206378 source:c:\users\bryan\onedrive - nanyang technological university\cz1107 data structures\lab6_solutions\lab6_q3.c
+	<stdio.h>
+	<stdlib.h>
+
+1635215713 source:c:\.programming\c\cz1107-c\searching\search_assn02.c
+	<stdio.h>
+	<stdlib.h>
+
+1635232686 source:c:\.programming\c\cz1107-c\searching\search_assn02_v2.c
+	<stdio.h>
+	<stdlib.h>
+
+1635225281 source:c:\.programming\c\cz1107-c\searching\search_assn02_v3.c
+	<stdio.h>
+	<stdlib.h>
+
+1635231770 source:c:\.programming\c\cz1107-c\searching\search_assn02_v4.c
+	<stdio.h>
+	<stdlib.h>
+
+1635230421 source:c:\.programming\c\cz1107-c\searching\search_assn03.c
+	<stdio.h>
+	<stdlib.h>
+
+1635232814 source:c:\.programming\c\cz1107-c\searching\search_assn02_v5.c
+	<stdio.h>
+	<stdlib.h>
+
+1635233414 source:c:\.programming\c\cz1107-c\searching\search_assn02_v6_expt.c
+	<stdio.h>
+	<stdlib.h>
+
+1635236586 source:c:\.programming\c\cz1107-c\searching\search_assn02_by.c
+
+1635236586 source:c:\.programming\c\cz1107-c\searching\search_assn02_v4_expr.c
+	<stdio.h>
+	<stdlib.h>
+

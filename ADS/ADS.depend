@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1634470145 source:c:\.programming\c\cz1107-c\ads\ads_assn05.c
+
+1634210765 source:c:\.programming\c\cz1107-c\ads\ads_assn06.c
+	<stdio.h>
+	<stdlib.h>
+
+1634510762 source:c:\.programming\c\cz1107-c\ads\ads_assn07.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1634466145 source:c:\.programming\c\cz1107-c\ads\ads_test.c
+
+1634473576 source:c:\.programming\c\cz1107-c\ads\ads_assn05_fuck.c
+
