@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1635560427 source:c:\.programming\c\cz1107-c\graph\graph_assn_02.c
+	<stdio.h>
+	<stdlib.h>
+
+1635561828 source:c:\.programming\c\cz1107-c\graph\graph_lab2_01.c
+	<stdio.h>
+	<stdlib.h>
+
+1635564260 source:c:\.programming\c\cz1107-c\graph\graph_assn_03.c
+	<stdio.h>
+	<stdlib.h>
+
