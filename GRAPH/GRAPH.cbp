@@ -31,13 +31,31 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="AS8_Q4_Template_Attempt_6.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="failsafe.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="graph_ASSN_01.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="graph_ASSN_01_v2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="graph_ASSN_01_v3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="graph_ASSN_01_v4.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="graph_ASSN_02.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="graph_ASSN_03.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="graph_LAB2_01.c">
+		<Unit filename="graph_ASSN_04.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

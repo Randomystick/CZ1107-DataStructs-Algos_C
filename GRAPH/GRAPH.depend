@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1635560427 source:c:\.programming\c\cz1107-c\graph\graph_assn_02.c
+1636605796 source:c:\.programming\c\cz1107-c\graph\graph_assn_02.c
 	<stdio.h>
 	<stdlib.h>
 
@@ -7,7 +7,39 @@
 	<stdio.h>
 	<stdlib.h>
 
-1635564260 source:c:\.programming\c\cz1107-c\graph\graph_assn_03.c
+1636565078 source:c:\.programming\c\cz1107-c\graph\graph_assn_03.c
+	<stdio.h>
+	<stdlib.h>
+
+1636561563 source:c:\users\bryan\onedrive - nanyang technological university\cz1107 data structures\cz1107\cz1107\assn 8\cz1107_assn8_backup1\cz1107_assn8\as8_q1.c
+	<stdio.h>
+	<stdlib.h>
+
+1636637985 source:c:\.programming\c\cz1107-c\graph\graph_assn_04.c
+	<stdio.h>
+	<stdlib.h>
+
+1636564170 source:c:\users\bryan\downloads\as8_q3_template.c
+	<stdio.h>
+	<stdlib.h>
+
+1636640597 source:c:\.programming\c\cz1107-c\graph\failsafe.c
+	<stdio.h>
+	<stdlib.h>
+
+1636654492 source:c:\.programming\c\cz1107-c\graph\graph_assn_01.c
+	<stdio.h>
+	<stdlib.h>
+
+1636640643 source:c:\.programming\c\cz1107-c\graph\as8_q4_template_attempt_6.c
+	<stdio.h>
+	<stdlib.h>
+
+1636656059 source:c:\.programming\c\cz1107-c\graph\graph_assn_01_v2.c
+	<stdio.h>
+	<stdlib.h>
+
+1636661395 source:c:\.programming\c\cz1107-c\graph\graph_assn_01_v3.c
 	<stdio.h>
 	<stdlib.h>
 

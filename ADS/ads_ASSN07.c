@@ -80,6 +80,9 @@ void createExpTree(BTNode** root,char* prefix)
 
     while (prefix <= prefixMax) //iterate through all the chars
     {
+        //printf("%c", *prefix++);
+        //continue;
+
         //if white space, advance pointer
         if(isspace(*prefix))
         {

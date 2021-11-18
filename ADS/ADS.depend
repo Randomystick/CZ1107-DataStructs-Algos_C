@@ -5,13 +5,17 @@
 	<stdio.h>
 	<stdlib.h>
 
-1634510762 source:c:\.programming\c\cz1107-c\ads\ads_assn07.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
+1637148677 source:c:\.programming\c\cz1107-c\ads\ads_assn07.c
 
 1634466145 source:c:\.programming\c\cz1107-c\ads\ads_test.c
 
 1634473576 source:c:\.programming\c\cz1107-c\ads\ads_assn05_fuck.c
+
+1637151899 source:c:\.programming\c\cz1107-c\ads\ads_lab01.c
+
+1637152747 source:c:\.programming\c\cz1107-c\ads\ads_lab02.c
+
+1637153854 source:c:\.programming\c\cz1107-c\ads\ads_lab03.c
+	<stdio.h>
+	<stdlib.h>
 

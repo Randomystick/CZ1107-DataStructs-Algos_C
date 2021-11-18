@@ -43,6 +43,15 @@
 		<Unit filename="ads_ASSN07.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="ads_LAB01.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ads_LAB02.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ads_LAB03.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

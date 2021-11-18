@@ -1,4 +1,4 @@
-/*
+///*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -181,4 +181,4 @@ void removeAllNodes(LinkedList *LLPtr)
 {
 	while(deleteNode(LLPtr));
 }
-*/
+//*/

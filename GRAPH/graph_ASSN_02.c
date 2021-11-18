@@ -1,4 +1,4 @@
-/*
+///*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -94,9 +94,51 @@ int main()
 
 int CC (Graph g)
 {
-    // do DFS for every single vertex. if any single run dont visit all vertices, return 0
-    for (i=0; i<g.V; i++)
+    // do BFS for every single vertex. if any single run dont visit all vertices, return 0
+    for (int VERTEX = 1; VERTEX < g.V; VERTEX++)
     {
+
+        //queue
+        Queue q;
+        q.head = NULL; q.tail = NULL; q.size = 0;
+
+        //visited array
+        int visitMark[g.V];
+
+        for(int i = 0; i < g.V; i++)
+        {
+            visitMark[i] = 0;
+        }
+
+        //put first node in queue
+        int v = VERTEX;
+        visitMark[v-1] = 1;
+        enqueue(&q, v);
+
+        while(!isEmptyQueue(q))
+        {
+            int qSize = q.size;
+            for (int i=0; i<qSize; i++)
+            {
+                ListNode* node = g.list[getFront(q) - 1];
+                while(node != NULL)
+                {
+                    if(visitMark[(node->vertex)-1] == 0)
+                    {
+                        enqueue(&q, node->vertex);
+                    }
+                    visitMark[(node->vertex)-1] = 1;
+                    node = node->next;
+                }
+                //printf("%i\n", getFront(q));
+                dequeue(&q);
+            }
+        }
+
+        for (int i = 0; i < g.V; i++)
+        {
+            if (visitMark[i] == 0) return 0;
+        }
 
     }
 

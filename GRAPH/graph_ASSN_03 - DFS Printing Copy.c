@@ -8,6 +8,17 @@ typedef struct _listnode
 	struct _listnode *next;
 } ListNode;
 
+typedef ListNode StackNode;
+
+typedef struct _stack
+{
+    int size;
+    StackNode *head;
+} Stack;
+
+
+
+
 typedef struct _graph{
     int V;
     int E;
@@ -22,7 +33,14 @@ typedef struct _queue{
    QueueNode *tail;
 } Queue;
 
-int BFS (Graph G, int v, int w);
+//////STACK///////////////////////////////////////////
+void push(Stack *sPtr, int vertex);
+int pop(Stack *sPtr);
+int peek(Stack s);
+int isEmptyStack(Stack s);
+void removeAllItemsFromStack(Stack *sPtr);
+
+int DFS (Graph G, int v, int w);
 
 void printGraphList(Graph );
 
@@ -70,7 +88,7 @@ int main()
     printf("Enter two vertices for finding their shortest distance:\n");
     scanf("%d %d", &i, &j);
 
-    int d = BFS(g,i,j);
+    int d = DFS(g,i,j);
 
     if(d==-1)
         printf("%d and %d are unconnected.\n",i,j);
@@ -80,48 +98,57 @@ int main()
     return 0;
 }
 
-int BFS (Graph g, int v, int w)
+int DFS (Graph g, int v, int w)
 {
-    Queue q; q.head = NULL; q.tail = NULL; q.size = 0;
+    Stack s; s.head = NULL; s.size = 0;
 
     int* visitedMark = (int*)malloc(sizeof(int) * g.V);
     for(int i = 0; i < g.V; ++i)
     {
         visitedMark[i] = 0;
     }
-    // enqueue starting node into queue
-    enqueue(&q, v);
-    // mark starting node as visited
+
+    push(&s, v);
     visitedMark[v-1] = 1;
 
-    // answer to return
-    int depth = 0;
-
-    // for every node
-    while(!isEmptyQueue(q))
+    int wentDeeper;
+    while(!isEmptyStack(s))
     {
-        //save the current size of the queue, this is the number of times we need to do comparisons and neighbour searching for this depth
-        int qSize = q.size;
-        for (int i=0; i<qSize; i++)
-        {
-            if(w == getFront(q)) return depth;
-            ListNode *cur = g.list[getFront(q) - 1];
-            while(cur != NULL)
-            {
-                // enqueue neighbours who aren't already in queue
-                if(visitedMark[(cur->vertex)-1] == 0)
-                {
-                    enqueue(&q, cur->vertex);
-                    //mark as visited
-                    visitedMark[(cur->vertex)-1] = !visitedMark[(cur->vertex)-1];
-                }
+        int isW = peek(s);
 
-                cur = cur->next;
+        // found the path
+        if (isW == w)
+        {
+            int i = 0;
+            while (!isEmptyStack(s))
+            {
+                printf("%i ->", peek(s));
+                pop(&s);
+                i++;
             }
-            // get rid of this node at this depth, by the time we are done we will have exhausted this depth
-            dequeue(&q);
+            return i-1;
         }
-        depth++;
+
+        //adjacency list
+        ListNode* cur = g.list[isW-1];
+        wentDeeper = 0;
+        while (cur!=NULL)
+        {
+            if (visitedMark[cur->vertex-1] == 0)
+            {
+                wentDeeper = 1;
+                visitedMark[cur->vertex-1] = 1;
+                push(&s, cur->vertex);
+                break;
+            }
+
+            cur = cur->next;
+        }
+
+        if (wentDeeper == 0)
+        {
+            pop(&s);
+        }
     }
 
     return -1;
@@ -189,4 +216,52 @@ void removeAllItemsFromQueue(Queue *qPtr)
 {
 	while(dequeue(qPtr));
 }
+
+
+
+void push(Stack *sPtr, int vertex)
+{
+    StackNode *newNode;
+    newNode= malloc(sizeof(StackNode));
+    newNode->vertex = vertex;
+    newNode->next = sPtr->head;
+    sPtr->head = newNode;
+    sPtr->size++;
+}
+
+int pop(Stack *sPtr)
+{
+    if(sPtr==NULL || sPtr->head==NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        StackNode *temp = sPtr->head;
+        sPtr->head = sPtr->head->next;
+        free(temp);
+        sPtr->size--;
+        return 1;
+    }
+}
+
+int isEmptyStack(Stack s)
+{
+    if(s.size==0) return 1;
+    else return 0;
+}
+
+int peek(Stack s)
+{
+    return s.head->vertex;
+}
+
+void removeAllItemsFromStack(Stack *sPtr)
+{
+    while(pop(sPtr));
+}
+
+//*/
+
+
 //*/
