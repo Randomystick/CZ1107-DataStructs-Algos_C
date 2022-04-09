@@ -96,7 +96,7 @@ int CC (Graph g)
 {
     // do DFS for every single vertex. if any single run dont visit all vertices, return 0
     // adjacency list
-    for (int VERTEX = 1; VERTEX < g.V; VERTEX++)
+    for (int VERTEX = 1; VERTEX <= g.V; VERTEX++)
     {
         Stack s; s.head = NULL; s.size = 0;
 
